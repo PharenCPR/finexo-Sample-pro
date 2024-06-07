@@ -1,22 +1,30 @@
-<template>  
+<template>
   <header class="header_section bg">
     <div class="container-fluid">
-      <nav class="navbar navbar-expand-lg custom_nav-container ">
+      <nav class="navbar navbar-expand-lg custom_nav-container">
         <!-- <a class="navbar-brand" href="index.html"> -->
         <router-link class="navbar-brand" to="/">
           <span>
             Finexo
-            {{count}}
+            {{ count }}
           </span>
         </router-link>
         <!-- </a> -->
 
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
           <span class=""> </span>
         </button>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav  ">
+          <ul class="navbar-nav">
             <li class="nav-item" :class="{ active: $route.path == '/' }">
               <!-- <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a> -->
               <router-link class="nav-link" to="/">Home</router-link>
@@ -44,11 +52,20 @@
             <li class="nav-item" :class="{ active: $route.path == '/login' }">
               <router-link class="nav-link" to="/login"> Login</router-link>
             </li>
-            <li class="nav-item" :class="{ active: $route.path == '/register' }">
-              <router-link class="nav-link" to="/register"> Register</router-link>
+            <li
+              class="nav-item"
+              :class="{ active: $route.path == '/register' }"
+            >
+              <router-link class="nav-link" to="/register">
+                Register</router-link
+              >
+            </li>
+            <!-- sing and upload file -->
+            <li class="nav-item" :class="{ active: $route.path == '/signup' }">
+              <router-link class="nav-link" to="/signup"> Sign Up</router-link>
             </li>
             <form class="form-inline">
-              <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit">
+              <button class="btn my-2 my-sm-0 nav_search-btn" type="submit">
                 <i class="fa fa-search" aria-hidden="true"></i>
               </button>
             </form>
@@ -60,20 +77,20 @@
 </template>
 
 <script>
-import { useCounterStore } from '@/store/counter'
-import { mapState, mapActions } from 'pinia'
+import { useCounterStore } from "@/store/counter";
+import { mapState, mapActions } from "pinia";
 export default {
-  computed:{
-    ...mapState(useCounterStore, ['count']),
+  computed: {
+    ...mapState(useCounterStore, ["count"]),
   },
-  methods:{
-    ...mapActions(useCounterStore, ['increment','decrement']),
-  }
-}
+  methods: {
+    ...mapActions(useCounterStore, ["increment", "decrement"]),
+  },
+};
 </script>
 
 <style scope>
-  .bg{
-    background-color: #1c126d;
-  }
+.bg {
+  background-color: #1c126d;
+}
 </style>
