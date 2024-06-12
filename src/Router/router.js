@@ -10,6 +10,7 @@ import RegistrationForm from "@/views/RegistrationForm.vue";
 import Users from "@/views/Users.vue";
 import Login from "@/views/Login.vue";
 import SignUp from "@/views/signup.vue";
+import Notefound from "@/views/Notefound.vue";
 
 const routes = [
   { path: "/", component: Home },
@@ -21,6 +22,7 @@ const routes = [
   { path: "/user", component: Users },
   { path: "/login", component: Login },
   { path: "/SignUp", component: SignUp },
+  { path: "/:patMatch(.*)*", component: Notefound },
 ];
 
 // const pinia = createPinia();
